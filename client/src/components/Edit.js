@@ -22,7 +22,6 @@ const Edit = (props) => {
   const inputRefUserName = React.createRef()
   const inputRefProfileCode = React.createRef()
 
-
   const updateFirstName = () => {
     const inputTextFirstName = inputRefFirstName.current.value
     setFirstName(inputTextFirstName);
@@ -31,7 +30,6 @@ const Edit = (props) => {
     const inputTextLastName = inputRefLastName.current.value
     setLastName(inputTextLastName);
   }
-
   const updateEmail = () => {
     const inputTextEmail = inputRefEmail.current.value
     setEmail(inputTextEmail);

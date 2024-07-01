@@ -11,7 +11,6 @@ import { getConstracts } from '../store/action/constracts'
 
 const Details = (props) => {
 
-  
   const getConstractName = (codeC) => {
 
     var x = props.constractsList.find((item) => item.contractCode == codeC)
@@ -44,6 +43,7 @@ const Details = (props) => {
             <Form.Control disabled value={props.currentUser.email} />
           </Form.Group>
         </Row>
+        
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridProfile">
             <Form.Label>Profile</Form.Label>
@@ -55,7 +55,6 @@ const Details = (props) => {
             <Form.Control disabled value={props.currentUser.userName} />
           </Form.Group>
 
-
           <Form.Group as={Col} controlId="formGridPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control value={props.currentUser.password} />
@@ -64,7 +63,6 @@ const Details = (props) => {
       </Form>
 
       <h3>Your active contracts </h3>
-
 
       <ListGroup as="ol" numbered>
         {props.constractToUserList.map((row) =>
@@ -85,8 +83,6 @@ const Details = (props) => {
   )
 }
 
-
-
 const mapStateToProps = (state) => {
   return {
     currentUser: state.user.currentUser,
@@ -95,6 +91,7 @@ const mapStateToProps = (state) => {
     constractsList: state.constracts.travelConstracts
   }
 }
+
 export default connect(mapStateToProps)(Details);
 
 

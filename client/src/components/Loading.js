@@ -8,9 +8,9 @@ import { addConsractToUser } from '../store/action/constractToUser'
 
 const Loading = (props) => {
     const [selectedContract, setSelectedContract] = React.useState(0);
-    const [showPaymentDetails, setshowPaymentDetails] = React.useState(false)
-    const openPaymentDetails = () => setshowPaymentDetails(true)
+    const [showPaymentDetails, setshowPaymentDetails] = React.useState(false);
 
+    const openPaymentDetails = () => setshowPaymentDetails(true)
     const updateSelectedContract = (con) => {
         const selected=con.contractCode;
         setSelectedContract(selected);
@@ -24,7 +24,6 @@ const Loading = (props) => {
                     <ListGroup.Item onClick={() => {
                         console.log(con.contractCode);                      
                         updateSelectedContract(con);
-                        console.log(selectedContract);
                     }}>
                         {con.contractName}
                     </ListGroup.Item>
@@ -78,23 +77,4 @@ const mapStateToProps = (state) => {
     }
 }
 export default connect(mapStateToProps, { getConstracts, addConsractToUser })(Loading);
-
-{/* <div id="btnDropDown">
-<Row className="mb-3" >
-    <Form.Group as={Col} md="4" >
-        <Dropdown onChange={updateSelectedContract}>
-            <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
-                choose travel contract
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu variant="dark">
-                {props.constractsList.map((con)=>(
-                 <Dropdown.Item href="#/action-1" key={con.contractCode}>{con.contractName}</Dropdown.Item>
-                 ) )}
-                <Dropdown.Divider />
-            </Dropdown.Menu>
-        </Dropdown>
-    </Form.Group>
-</Row> 
-</div>  */}
 

@@ -7,21 +7,15 @@ import { getConstracts } from './constracts';
 import { getConstractToUser } from './constractToUser';
 
 export const postUser = (user) => {
-
     return (dispatch) => {
         axios.post(`https://localhost:44321/api/user/addUser`, user)
             .then(response => {
                 console.log(response.data);
                 dispatch(addUser(response.data));
-
-                swal("BARUCH HASHEM!", "Your details have been saved in the system", "success");
-
-
-            }
-            )
+                swal("good news!", "Your details have been saved in the system", "success");
+            })
             .catch(error => {
-                console.log("inside the cath of the register");
-                console.log(error);
+                console.log("error, inside the cath of the register");
             })
     }
 }
@@ -31,7 +25,6 @@ export const logUser = (user) => {
             .then(response => {
                 console.log(response);
                 if (response.data == null || response.data == undefined) {
-
                     swal("Ho no...", "The user name or the password are wrong", "error");
                 }
                 else {
@@ -42,7 +35,6 @@ export const logUser = (user) => {
                     dispatch(getConstractToUser(response.data.id))
                     dispatch(getConstracts());
                     swal("Good job!", "you logged in!", "success");
-
                 }
             })
             .catch(error => {
@@ -51,9 +43,6 @@ export const logUser = (user) => {
             })
     }
 }
-
-
-
 
 export const updetaUser = (user) => {
     debugger
@@ -69,10 +58,10 @@ export const updetaUser = (user) => {
             .catch(err => {
                 console.log(err);
                 swal("oops... there is problem with the update!!")
-
             })
     }
 }
+
 export const saveUser = (user) => {
     return {
         type: ActionTypes.SAVE_USER,

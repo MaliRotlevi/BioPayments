@@ -13,6 +13,7 @@ import {logOutUser} from '../store/action/user';
 import {connect} from 'react-redux';
 
 const HomePage = (props) => {
+
     return (<>
         <div className='auth-wrapper'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" id="nav1" className="auth-inner">
@@ -42,7 +43,6 @@ const HomePage = (props) => {
             </Navbar>
 
 
-
             <Routes className="auth-inner">
                 <Route path="/" element={<div className="auth-wrapper">
                     <div className="auth-inner"><Login /></div></div>} />
@@ -66,10 +66,9 @@ const HomePage = (props) => {
     )
 }
 
-
 const mapStateToProps = (state) => {
     return {
-      currentUser: state.user.currentUser
+      currentUser: state.user.currentUser;
     }
   }
   

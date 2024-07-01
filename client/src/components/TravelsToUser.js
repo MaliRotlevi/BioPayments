@@ -33,6 +33,7 @@ const TravelsToUser = (props) => {
             border: 0,
         },
     }));
+
     return (<>
         <h1>history</h1>
         <TableContainer component={Paper}>
@@ -57,7 +58,6 @@ const TravelsToUser = (props) => {
                 </TableBody>
             </Table>
         </TableContainer>
-
     </>)
 }
 

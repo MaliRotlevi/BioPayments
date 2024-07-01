@@ -19,7 +19,6 @@ export const getConstracts = () => {
     }
 }
 
-
 export const saveConstracts = (c) => {
     return {
         type: ActionTypes.CONSTRACTS_SAVED,
